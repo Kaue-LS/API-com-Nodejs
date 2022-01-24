@@ -3,7 +3,6 @@ const cookieParser=require('cookie-parser')
 const cors= require("cors")
 const mongoose=require("mongoose")
 const Routes= require("./src/routes")
-require('dotenv').config()
 const app= express()
 
 // Iniciando o servidor na porta
@@ -27,7 +26,7 @@ app.use(Routes)
 
 // Conectando ao banco de dados mongoDB
 
-mongoose.connect(`mongodb://localhost:27017/{nome do banco de dados}`,{
+mongoose.connect('mongodb://localhost:27017/clientes',{
     useNewUrlParser:true,
     useUnifiedTopology:true
 }).then(()=>{
