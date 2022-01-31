@@ -1,6 +1,6 @@
-import * as S from '../style/Deletar'
+import * as S from '../../style/Deletar'
 import { useLocation } from 'react-router-dom'
-import { Delete } from '../Services/Api'
+import { Delete } from '../../Services/Api'
 export default function Deletar(){
     const location=useLocation()
     const {state}=location.state
@@ -8,7 +8,7 @@ export default function Deletar(){
     const DeletarCliente=async()=>{
         const response= await Delete.delete(`/api/clientes/${state._id}`)
         if(response.status===200){
-            window.location.href='/'
+            window.location.href='/admin'
           }else{
             alert("Erro ao excluir cliente")
           }

@@ -1,12 +1,24 @@
 import styled from 'styled-components'
 
 export const SideBar=styled.div`
-    width: 20vw;
-    background-color: #4F4F4F;
+    width: 15rem;
     height: 100vh;
+    background-color: #721223;
+    box-shadow: 0px 0px 10px black;
     position: fixed;
+    .arrow_back_ios{
+        
+        position: relative;
+        left: 55px;
+    }
+    .arrow_forward_ios{
+        position: relative;
+        left: 552px;
 
+    }
+   
 `;
+
 export const Logo=styled.div`
     height: 20%;
     width: 100%;
@@ -50,15 +62,24 @@ export const Buttons=styled.div`
 `
 
 export const Exit=styled.div`
-width: 100%;
-margin:10px auto;
-    button{
-        text-transform: uppercase;
-        font-weight: 700;
-        border: none;
-        border-radius: 5px;
-        font-size: 1.3rem;
-        margin: 5px 0.5rem;
-        padding: 10px 40px;
+text-align: center;
+margin:1rem 15rem;
+z-index: -999;
+overflow: hidden;
+background:linear-gradient(to right,#721223,#511443);
+text-align: center;
+width: 3rem;
+padding: 10px 10px;
+background-color: white;
+
+    span{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        display: flex;
+        align-items: center;
+    font-weight: 700;
+    font-size: 3rem;
     }
 `

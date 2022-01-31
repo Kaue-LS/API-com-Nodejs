@@ -14,8 +14,8 @@ Routes.get("/", clientes.index)
 Routes.post("/api/clientes",clientes.create)
 // GET
 Routes.get("/api/clientes",clientes.index)
-Routes.get("/api/clientes/adm",clientes.tipo1)
-Routes.get("/api/clientes/client",clientes.tipo2)
+// Routes.get("/api/clientes/adm",clientes.tipo1)
+// Routes.get("/api/clientes/client",clientes.tipo2)
 
 
 // GET PELO ID

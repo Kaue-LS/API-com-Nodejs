@@ -13,9 +13,9 @@ const DataSchema= new mongoose.Schema({
     sobrenome:{
         type: String,
      },
-    tipo:{
-        type:Number,
-        default:2
+    admin:{
+        type:Boolean,
+        default:false
     },
     email:{
        type: String,

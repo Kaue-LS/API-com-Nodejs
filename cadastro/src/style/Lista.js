@@ -5,15 +5,17 @@ export const Clientes=styled.div`
     border-radius:5px;
     border: 1px solid gray;
     display: flex;
+    height: 50px;
+    overflow:hidden;
     justify-content: space-between;
     flex-direction: row;
     margin:10px auto;
-    width: 90%;
+    width: 70rem;
     
 
 `;
 export const Number=styled.div`
-    background-color: gray;
+      background-color: #741443;
     color: #ffffff;
     display: flex;
     justify-content: center;
@@ -23,14 +25,21 @@ export const Number=styled.div`
 `;
 
 export const Name=styled.div`
-margin: 0 auto 0 20px;
+margin: 0 auto 0 10px;
 display: flex;
-justify-content: center;
+width: 25rem;
 align-items: center;
 flex-direction: row;
+flex-wrap: nowrap;
+padding: 0 10px 0 0px;
+border-right:2px solid  #741443;
 text-align: center;
 flex-wrap: wrap;
-
+label{
+    margin: 0 10px 0 0;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
 p{
 font-size:1.5rem;
 }
@@ -42,7 +51,9 @@ export const Tipo1=styled.div`
 justify-content: center;
 align-items: center;
 width: 200px;
-background-color: gray;
+height: 100%;
+background-color: #741443;
+
     p{
         color: white;
 font-size:1.5rem;
@@ -54,7 +65,9 @@ export const Tipo2=styled.div`
 justify-content: center;
 align-items: center;
 width: 200px;
-background-color: gray;
+height: 100%;
+background-color: #741443;
+
     p{
         color: white;
 font-size:1.5rem;
@@ -62,14 +75,17 @@ font-size:1.5rem;
 `
 export const Buttons=styled.div`
     display: flex;
+    width: 15rem;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
     margin: 0 auto;
+    border-right: 2px solid  #741443;
+    padding: 0 10px 0 0;
     text-transform: uppercase;
 `
 export const Editar=styled.div`
-    background-color: grey;
+       background-color: #741443;
+
     display: flex;
 justify-content: center;
 align-items: center;
@@ -83,8 +99,20 @@ cursor: pointer;
 font-size:1.3rem;
 }
 `
+export const Tipo=styled.div`
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+
+label{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 10px;
+}
+`
 export const Remover=styled.div`
-border: 2px solid grey;
+border: 2px solid  #741443;
 border-top-right-radius: 5px;
 border-bottom-right-radius: 5px;
     display: flex;

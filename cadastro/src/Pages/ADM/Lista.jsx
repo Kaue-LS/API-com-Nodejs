@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
-import { Get } from "../Services/Api";
-import * as S from '../style/Clientes'
+import { Get } from "../../Services/Api";
+import * as S from '../../style/Lista'
 import {Link} from 'react-router-dom'
-import { useLocation } from "react-router-dom";
 export default function Cliente() {
-  const location=useLocation()
-  console.log(location)
   const [data, setData] = useState();
   const [laoding, setLoading] = useState(true);
   useEffect(() => {
@@ -17,7 +14,6 @@ export default function Cliente() {
     Get.get("/api/clientes").then((res) => {
       setData(res.data);
       setLoading(false);
-      console.log(data)
     });
   };
   return (
@@ -31,9 +27,11 @@ export default function Cliente() {
                   <p>{index+1}</p>
                 </S.Number>
                 <S.Name>
+                <label>Nome:</label>
+
                   <p>{item.nome} {item.sobrenome}</p>
                 </S.Name>
-                {item.tipo===1?(
+                {item.admin===true?(
                   null
                 ):(
                   <S.Buttons>
@@ -49,8 +47,10 @@ export default function Cliente() {
                    </Link>
                    </S.Buttons>
                 )}
+                <S.Tipo>
+                <label>Tipo:</label>
                 {
-                  item.tipo===2?(
+                  item.admin===false?(
                     <S.Tipo2>
                       <p>Cliente</p>
                     </S.Tipo2>
@@ -60,7 +60,7 @@ export default function Cliente() {
                     </S.Tipo1>
                   )
                 }
-                
+                </S.Tipo>
                 
               
                

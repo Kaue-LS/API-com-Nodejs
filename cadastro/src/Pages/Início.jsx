@@ -1,56 +1,30 @@
-import { useEffect, useState } from "react";
-import { Get } from "../Services/Api";
-import * as S from '../style/Clientes'
+import * as S from '../style/Inicio'
 export default function Inicio() {
-  const [data, setData] = useState();
-  const [laoding, setLoading] = useState(true);
-  useEffect(() => {
-    if (laoding) {
-      GETAPI();
-    }
-  });
-  const GETAPI = async () => {
-    const response =await Get.get("/api/clientes/")
-      setData(response.data);
-      setLoading(false);
-    
-  };
   return (
-    <>
-      {!laoding ? (
-        <>
+    <S.Inicio>
+      <S.Painel>
+        <h1>Bem vindo a pagína de cadastro</h1>
+        <p>Não esqueça de se cadastrar!</p>
+      </S.Painel>
+      <S.Body>
+        <div>
+        <label htmlFor="#quemSomos">Quem Somos?</label>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, voluptatum, optio inventore ab vel corporis soluta, aspernatur quae maxime voluptatem tenetur dolorem atque dolor ad molestias perferendis id sint quis.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, voluptatum, optio inventore ab vel corporis soluta, aspernatur quae maxime voluptatem tenetur dolorem atque dolor ad molestias perferendis id sint quis.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, voluptatum, optio inventore ab vel corporis soluta, aspernatur quae maxime voluptatem tenetur dolorem atque dolor ad molestias perferendis id sint quis.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, voluptatum, optio inventore ab vel corporis soluta, aspernatur quae maxime voluptatem tenetur dolorem atque dolor ad molestias perferendis id sint quis.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, voluptatum, optio inventore ab vel corporis soluta, aspernatur quae maxime voluptatem tenetur dolorem atque dolor ad molestias perferendis id sint quis.
+        </p>
+        </div>
+        <div>
+        <label htmlFor="#funcionamento">Como funciona?</label>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, est laboriosam, unde incidunt veniam aliquam minus placeat deserunt saepe optio aperiam molestiae provident expedita velit beatae, error debitis quasi quo!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci distinctio dolores dolore? Debitis, dignissimos hic aspernatur minus ab ad nisi esse qui repudiandae consequatur laborum ex dicta sequi odit repellendus!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci distinctio dolores dolore? Debitis, dignissimos hic aspernatur minus ab ad nisi esse qui repudiandae consequatur laborum ex dicta sequi odit repellendus!
 
-            {data.map((item, index)=> (
-              <S.Clientes key={index}>
-                <S.Number>
-                  <p>{index+1}</p>
-                </S.Number>
-                <S.Name>
-                  <p>{item.nome} {item.sobrenome}</p>
-                </S.Name>
-                {
-                  item.tipo===2?(
-                    <S.Tipo2>
-                      <p>Cliente</p>
-                    </S.Tipo2>
-                  ):(
-                    <S.Tipo1>
-                      <p>Administrador</p>
-                    </S.Tipo1>
-                  )
-                }
-                
-                
-             
-                
-              </S.Clientes>
-            ))
-            }
-         
-        </>
-      ) : (
-        "Carregando"
-      )}
-      </>
+        </p>
+        </div>
+      </S.Body>
+    </S.Inicio>
   );
 }

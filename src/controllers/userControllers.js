@@ -10,26 +10,26 @@ module.exports={
 
         res.json(cliente)
     },
-    async tipo1(req,res){
-        const cliente= await clientes.find({tipo:1});
+    async admin1(req,res){
+        const cliente= await clientes.find({admin:true});
 
         res.json(cliente)
     },
-    async tipo2(req,res){
-        const cliente= await clientes.find({tipo:2});
+    async admin2(req,res){
+        const cliente= await clientes.find({admin:false});
 
         res.json(cliente)
     },
     // POST
     async create(req,res){
         // Essas sao as info que vao vim do front-end
-       const {nome,sobrenome,email,tipo,senha}= req.body;
+       const {nome,sobrenome,email,admin,senha}= req.body;
        let data={};
     //    Vai verificar se o email ja existe dentro
       let user= await clientes.findOne({email})
        if(!user){
         //    Caso nao exista mesmo email
-           data={nome,sobrenome,email,tipo,senha};
+           data={nome,sobrenome,email,admin,senha};
            user= await clientes.create(data);
            return res.status(200).json({
                error:false,
@@ -61,12 +61,13 @@ module.exports={
     // Update pelo ID
     async update(req,res){
         const {id}=req.params;
-        const {nome,sobrenome,email,tipo,senha}= req.body;
-        const data={nome,sobrenome,tipo,email,senha};
+        const {nome,sobrenome,email,admin,senha}= req.body;
+        const data={nome,sobrenome,admin,email,senha};
        const user=await clientes.findByIdAndUpdate(id,data,{new:true})
        return res.json(user)
     },
     async login(req,res){
+        req.header("*");
         const {email,senha}=req.body;
         clientes.findOne({email},function(err,user){
             if(err){
@@ -88,8 +89,7 @@ module.exports={
                         expiresIn:"24h"
                     })
                     res.cookie('token',token,{httpOnly:true})
-                    res.status(200).json({status:1,auth:true,token:token,id:user.id,nome:user.nome,sobrenome:user.sobrenome,tipo:user.tipo})
-                    res.status(200).json({message:"Sucesso"})
+                    res.status(200).json({status:1,auth:true,token:token,id:user.id,nome:user.nome,sobrenome:user.sobrenome,admin:user.admin})
                     
                 })
     }

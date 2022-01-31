@@ -7,9 +7,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
 
 html,body{
+  background-color: rgb(243, 243, 243);
   font-family: 'Secular One', sans-serif;
 }
-.routes{
-  width: 80%;
-  margin: 0 0 0 auto;
+.app{
+  width: 100%;
+  margin: 0 0;
 }

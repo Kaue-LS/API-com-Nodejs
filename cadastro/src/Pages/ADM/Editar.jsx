@@ -1,13 +1,13 @@
-import * as S from '../style/Cadastrar'
+import * as S from '../../style/Cadastrar'
 import { useEffect, useState} from 'react'
-import { Get, Put} from '../Services/Api'
+import { Get, Put} from '../../Services/Api'
 import { useParams } from 'react-router-dom'
 export default function Editar(){
     const state= useParams()
     const id=state.id
     const [nome,setNome]=useState("")
     const [sobrenome,setSobrenome]=useState("")
-    const [tipo,setTipo]=useState("")
+    const [admin,setAdmin]=useState("")
     const [email,setEmail]=useState("")
     const [senha,setSenha]=useState('')
     const [erro,setErro]=useState("")
@@ -53,7 +53,7 @@ export default function Editar(){
             const data={
                 nome,
                 sobrenome,
-                tipo,
+                admin,
                 email,
                 senha
             }
@@ -87,10 +87,10 @@ export default function Editar(){
                 </S.FormControl>
                 <S.FormControl>
                     <label>Tipo:</label>
-                    <select required  onClick={(e)=>setTipo(e.target.value)}>
+                    <select required  onClick={(e)=>setAdmin(e.target.value)}>
                         <option>-</option>
-                        <option value={2}>Cliente</option>
-                        <option value={1}>Administrador</option>
+                        <option value={false}>Cliente</option>
+                        <option value={true}>Administrador</option>
                     </select>
                 </S.FormControl>
               <button onClick={Cadastrar}>Cadastrar</button>

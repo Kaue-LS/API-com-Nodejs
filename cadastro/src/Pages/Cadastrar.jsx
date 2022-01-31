@@ -1,19 +1,21 @@
 import * as S from '../style/Cadastrar'
 import { useState } from 'react'
 import { Post } from '../Services/Api'
+import { Link } from 'react-router-dom'
 export default function Cadastrar(){
     const [nome,setNome]=useState('')
     const [sobrenome,setSobrenome]=useState('')
     const [email,setEmail]=useState('')
     const [senha,setSenha]=useState("")
     const [erro,setErro]=useState("")
+    const [termos,setTermos]=useState(false)
 
     const Cadastrar= async()=>{
         const regexp1=/@(gmail|hotmail).com/gi
         if(nome.length<3){
             setErro('Nome vázio')
         }
-        if(sobrenome.length<3){
+        else if(sobrenome.length<3){
             setErro('Sobrenome vázio')
         }
         else if(email.length===0){
@@ -25,13 +27,16 @@ export default function Cadastrar(){
         else if( senha.length<6){
             setErro("Senha precisa no máximo de 9 caracteres")
         }
+        else if(!termos){
+            setErro("Termos e condições não aceitas")
+        }
         else{
             setErro("")
             const data={
                 nome,
                 sobrenome,
                 email,
-                tipo:2,
+                admin:false,
                 senha
             }
            const response= await Post.post('/api/clientes',data)
@@ -61,6 +66,10 @@ export default function Cadastrar(){
                     <label>Senha:<span>*</span></label>
                     <input value={senha} onChange={e=>setSenha(e.target.value)}  type={ 'password'} name='Senha' maxLength={9} placeholder='Digite seu Senha...'/>
                 </S.FormControl>
+                <div style={{display:'flex',flexDirection:'row',justifyContent:'center',alignItems:'center'}}>
+            <input onClick={()=>setTermos(true)} type={'checkbox'} ></input>  
+            <p>Li e aceito os <Link to='/termos'>termos e condições</Link></p>  
+            </div>
               <button onClick={Cadastrar}>Cadastrar</button>
               
             </S.Form>

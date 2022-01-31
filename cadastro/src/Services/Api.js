@@ -5,6 +5,11 @@ export const Get=axios.create({
     method:'GET'
     
 })
+export const GetbyID=axios.create({
+    baseURL:'http://localhost:8000',
+    method:'GET'
+    
+})
 export const Post=axios.create({
     baseURL:'http://localhost:8000',
     method:'POST'
