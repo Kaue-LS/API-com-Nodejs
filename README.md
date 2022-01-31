@@ -7,6 +7,9 @@
 --Mongoose
 --Cookie-Parser
 --Cors
+--concunrrently
+--nodemon como desenvolvedor
+
 
 -Iniciando APP:
 --Terminal npm dev ou node server.js
@@ -38,5 +41,14 @@ e dps exclui o cliente
   
   Para iniciar tanto o back end como tambem o front-end
 
--Baixe a biblioteca Material UI
+-Baixe as seguintes bibliotecas: Axios, React-Router-Dom,Styled-Components
+
 -Certifica-se que esteja baixando na pasta do react
+
+
+--Pastas
+Components:
+-NavBar
+-SideBar
+-Termos
+-
