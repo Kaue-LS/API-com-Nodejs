@@ -4,6 +4,7 @@
   "description": "Usando nodejs, express e mongo no cadastro de clientes",
   "main": "index.js",
   "scripts": {
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build",
     "cadastro": "npm start --prefix cadastro",
     "server": "nodemon server.js",
     "dev": "concurrently \"npm run server\" \"npm run cadastro\"",

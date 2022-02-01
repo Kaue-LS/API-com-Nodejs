@@ -27,7 +27,7 @@ app.use(Routes)
 
 // Conectando ao banco de dados mongoDB
 
-mongoose.connect('mongodb://localhost:27017/Nome do banco de dados',{
+mongoose.connect('mongodb+srv://kaue:LJS0506@cluster0.1msze.mongodb.net/clientes',{
     useNewUrlParser:true,
     useUnifiedTopology:true
 }).then(()=>{
