@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Get } from "../../Services/Api";
-import * as S from '../../style/Lista'
+import * as S from '../../style/Clientes'
 import {Link} from 'react-router-dom'
 export default function Cliente() {
   const [data, setData] = useState();

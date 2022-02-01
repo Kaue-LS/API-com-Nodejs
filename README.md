@@ -9,7 +9,7 @@
 --Cors
 --concunrrently
 --nodemon como desenvolvedor
-
+--jsonwebtoken
 
 -Iniciando APP:
 --Terminal npm dev ou node server.js
@@ -22,6 +22,27 @@
 -Arquivos:
 --Server= Conectando ao MongoDB e iniciando servidor no localhost. Alem de colocar ferramentas que o express ira utilizar como cors e json
 --Routes= Rotas do APP e determinada função que ela ira executar no userController
+
+
+
+
+
+
+
+Banco de dados:
+--Modelo:
+nome
+sobrenome
+admin
+email
+senha
+
+
+
+
+
+
+
 
 ------------------------------------------------------------
 
@@ -49,6 +70,12 @@ e dps exclui o cliente
 --Pastas
 Components:
 -NavBar
--SideBar
+-SideBar--Somente para administradores
 -Termos
--
+
+Services:
+-AdminRoutes--Rotas somente para administradores
+-Api--Api criada pelo banco de dados
+-Auth--funções que pegam valores colocados no localsotrage apos login ou cadastro
+-PrivateRoute--ROtas privada somente para os que se cadastraram
+
