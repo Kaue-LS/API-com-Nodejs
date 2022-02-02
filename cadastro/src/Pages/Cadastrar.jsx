@@ -41,7 +41,7 @@ export default function Cadastrar(){
             }
            const response= await Post.post('/api/clientes',data)
            if(response.status===200){
-            window.location.href='/'
+            window.location.href='/cliente'
           }else{
             alert("Erro ao cadastrar Cliente")
           }

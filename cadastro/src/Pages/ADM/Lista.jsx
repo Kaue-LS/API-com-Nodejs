@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Get } from "../../Services/Api";
-import * as S from '../../style/Clientes'
+import * as S from '../../style/Lista'
 import {Link} from 'react-router-dom'
 export default function Cliente() {
   const [data, setData] = useState();
@@ -27,10 +27,10 @@ export default function Cliente() {
                   <p>{index+1}</p>
                 </S.Number>
                 <S.Name>
-                <label>Nome:</label>
 
                   <p>{item.nome} {item.sobrenome}</p>
                 </S.Name>
+                <div>
                 {item.admin===true?(
                   null
                 ):(
@@ -48,7 +48,6 @@ export default function Cliente() {
                    </S.Buttons>
                 )}
                 <S.Tipo>
-                <label>Tipo:</label>
                 {
                   item.admin===false?(
                     <S.Tipo2>
@@ -63,7 +62,7 @@ export default function Cliente() {
                 </S.Tipo>
                 
               
-               
+                </div>
                 
               </S.Clientes>
             ))

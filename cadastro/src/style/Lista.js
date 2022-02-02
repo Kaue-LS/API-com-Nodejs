@@ -10,31 +10,53 @@ export const Clientes=styled.div`
     justify-content: space-between;
     flex-direction: row;
     margin:10px auto;
-    width: 70rem;
-    
-
+    width: 90%;
+    div{
+        display: flex;
+        flex-direction: row;
+    }
+    @media (max-width:880px) {
+       height: auto;
+       align-items: center;
+       justify-content: center;
+       flex-direction: column;
+       div{
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           flex-direction: row;
+           flex-wrap: wrap;
+       }
+    }
 `;
 export const Number=styled.div`
-      background-color: #741443;
+      background-color: #341443;
     color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 5rem;
+    height: 100%;
     font-size: 1.5rem;
+    @media (max-width:880px) {
+        width: 100%;
+        height:3rem;
+        padding: 10px 10px;
+    }
 `;
 
 export const Name=styled.div`
-margin: 0 auto 0 10px;
+margin: 0 auto 0 2rem;
 display: flex;
-width: 25rem;
 align-items: center;
 flex-direction: row;
 flex-wrap: nowrap;
 padding: 0 10px 0 0px;
-border-right:2px solid  #741443;
 text-align: center;
 flex-wrap: wrap;
+  @media (max-width:880px) {
+      margin: 2rem auto;
+    }
 label{
     margin: 0 10px 0 0;
     font-weight: 700;
@@ -53,7 +75,11 @@ align-items: center;
 width: 200px;
 height: 100%;
 background-color: #741443;
+@media (max-width:880px) {
+       border-top-left-radius: 5px;
+       border-top-right-radius: 5px;
 
+    }
     p{
         color: white;
 font-size:1.5rem;
@@ -67,6 +93,10 @@ align-items: center;
 width: 200px;
 height: 100%;
 background-color: #741443;
+@media (max-width:880px) {
+       border-radius: 5px;
+
+    }
 
     p{
         color: white;
@@ -79,9 +109,12 @@ export const Buttons=styled.div`
     flex-direction: row;
     align-items: center;
     margin: 0 auto;
-    border-right: 2px solid  #741443;
     padding: 0 10px 0 0;
     text-transform: uppercase;
+    @media (max-width:880px) {
+       margin: 10px auto;
+    }
+
 `
 export const Editar=styled.div`
        background-color: #741443;

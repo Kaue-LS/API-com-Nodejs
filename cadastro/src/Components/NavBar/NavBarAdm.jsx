@@ -13,10 +13,10 @@ export default function NavBarAdm(){
           <S.Logo><Link style={{textDecoration:'none',color:'white'}}to='/'>Cadastro de Clientes</Link></S.Logo>
           <S.Cliente style={{cursor:'default'}}  >
         
-            <div>
+            <S.Perfil>
               <span className="material-icons">perm_identity</span>
               <p style={{display:'block'}}>{name}</p>
-              </div>
+              </S.Perfil>
             
           </S.Cliente>
         </S.NavBarAdm>

@@ -18,7 +18,6 @@ import Cliente from './Pages/Cliente'
 import NavBarAdm from './Components/NavBar/NavBarAdm'
 export default function Rotas(){
   const admin= JSON.parse( GetAdminClient())
-  console.log(admin)
     return(
         <BrowserRouter>
         {admin===null || admin===false?(
@@ -55,9 +54,7 @@ export default function Rotas(){
             <Route  element={<AdminRoute/>}>
             <Route index path='/admin/editar/:id' element={<Editar/>}/>
             </Route>
-            <Route  element={<AdminRoute/>}>
             <Route index path='/termos' element={<Termos/>}/>
-            </Route>
         </Routes>
         </div>
         </BrowserRouter>

@@ -53,11 +53,34 @@ export const Buttons=styled.div`
 
     }
     li{
+        display: flex;
         text-decoration: none;
         color: #ffffff;
-        list-style: none;
         padding: 10px 10px;
-        margin: 5px auto;
+        text-align: justify;
+        list-style: none;
+        margin: 30px 10px;
+        :hover{
+            animation: sliceBorder 1s forwards;
+
+            @keyframes sliceBorder {
+                0%{
+                    width: 1rem;
+                    border-bottom: 1px solid white;
+                }
+                50%{
+                    background-color: white;
+                    color:#721223 ;
+                    border-bottom: 4px solid #341443;
+                }
+                100%{
+                    background-color: white;
+                    color:#721223 ;
+                    width: 8rem;
+                    border-bottom: 4px solid #341443;
+                }
+            }
+        }
     }
 `
 
@@ -81,5 +104,23 @@ background-color: white;
         align-items: center;
     font-weight: 700;
     font-size: 3rem;
+    }
+`
+export const Adm=styled.div`
+    display: none;
+    @media (max-width:880px){
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        margin: auto 10px;
+        font-size: 2rem;
+        span{
+            margin: 0 10px;
+            border-radius: 100%;
+            border: 3px solid white;
+            font-size: 3rem;
+        }
     }
 `

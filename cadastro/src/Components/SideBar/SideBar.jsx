@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Get } from "../../Services/Api";
-import {  getToken, Logout } from "../../Services/Auth";
+import {  getToken, Logout ,GetNomeClient} from "../../Services/Auth";
 import * as S from "./Styled";
 export default function SideBar() {
   const [open,setOpen]=useState('arrow_back_ios')
   console.log(open)
-
+  const name=GetNomeClient()
   const OpenBar=(props)=>{
       if(props==='arrow_back_ios'){
         document.getElementById('SideBar').style=`
@@ -49,14 +49,16 @@ export default function SideBar() {
       <S.Buttons>
         <nav>
           <ul>
-            <li>
-              <Link
+          <Link
                 style={{ textDecoration: "none", color: "#ffffff" }}
                 to={"/admin/clientes"}
               >
+            <li>
+             
                 Clientes
-              </Link>
             </li>
+            </Link>
+
             <li style={{ cursor: "pointer" }} onClick={() => Sair()}>
               LogOut
             </li>
@@ -66,6 +68,10 @@ export default function SideBar() {
       <S.Exit>
         <span onClick={()=>OpenBar(open==='arrow_back_ios'?'arrow_forward_ios':'arrow_back_ios')} className="material-icons">{open}</span>
       </S.Exit>
+      <S.Adm>
+      <span className="material-icons">perm_identity</span>
+        <p>{name}</p>
+      </S.Adm>
     </S.SideBar>
   );
 }

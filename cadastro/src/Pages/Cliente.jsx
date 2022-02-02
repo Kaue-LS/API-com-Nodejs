@@ -17,10 +17,10 @@ export default function Cliente() {
   const response=await  GetbyID.get(`/api/clientes.details/${id}`)
       setDados(response.data);
     setLoading(false);
-    console.log(dados)
   };
     return (
       <S.Cliente>
+        <S.Info>
         {!loading?(
           <>
             <S.Data key={dados.id}>
@@ -54,6 +54,7 @@ export default function Cliente() {
             <h2>Ja me cadastrei, e agora?</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad asperiores eaque harum cumque aliquam. Commodi laboriosam adipisci ex architecto autem, fuga neque, nesciunt eius quam error hic dolor repellendus quisquam.</p>
           </S.Label>
+          </S.Info>
       </S.Cliente>
     );
   }

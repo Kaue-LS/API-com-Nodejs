@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
-export const Inicio=styled.div``
+export const Inicio=styled.div`
+display:flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+`
 
 export const Painel=styled.div`
     width: 100%;
@@ -14,6 +19,9 @@ export const Painel=styled.div`
         font-size: 3rem;
         color: white;
         text-transform: uppercase;
+        @media (max-width:880px) {
+                text-align: center;
+        }
     }
     p{
         font-size: 1.5rem;

@@ -9,6 +9,7 @@ export const NavBar=styled.nav`
     flex-direction:row ;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0px 0px 10px black;
    
 `
 export const NavBarAdm=styled.div`
@@ -30,66 +31,74 @@ export const Logo=styled.div`
     font-weight: 700;
     margin: 0 auto;
     text-transform: capitalize;
-    @media (max-width:880px) {
-        margin: 0 10px;
-    }
+ 
 `;
+export const IconButtons=styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
 
+`
 export const Buttons=styled.div`
-    position: fixed;
-    top:60px;
+    display: block;
+    border: 2px solid  #741443;
+    padding: 5px 5px;
     background-color: white;
-    @media (max-width:880px) {
-
-    }
-    div{
-        margin: 5px 5px;
-    }
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    margin: 12vh 0 0 58vw;
     button{
-        padding: 10px 10px;
+        text-transform: uppercase;
+        margin: auto auto;
+        text-decoration: none;
         font-weight: 700;
-        background: none;
-        width: 15vw;
-        border: none;
-        
-        color: gray;
+        margin: 1px 0;
+        font-size: 1rem;
         background-color: #ffffff;
-        cursor: pointer;
-        transition: 400ms ease;
+        border: none;
+        width:8rem;
+        padding: 10px 10px;
+        transition: 400ms ;
+
         :hover{
             color: white;
-            background-color:  #741443;
+            padding: 10px 10px;
+            background-color: #741443;
         }
+
     }
 `
 
 export const Cliente=styled.div`
-margin: 0 auto;
-cursor: pointer;
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-    span{
-        
-        color: white;
-        font-size: 2.5rem;
-    }
-    div{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        p{
-            display: block;
-            color: white;
-            @media (max-width:880px){
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    flex-direction: row;
+    @media (max-width:880px) {
         display: none;
     }
-        }
-        span{
+    span{
         color: white;
+        margin: 0 10px;
+        font-size: 2.5rem;
+    }
+
+`
+export const Perfil=styled.div`
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    span{
         font-size: 2rem;
     }
-    }
 `
+
+
