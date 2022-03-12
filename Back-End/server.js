@@ -27,7 +27,7 @@ app.use(Routes)
 
 // Conectando ao banco de dados mongoDB
 
-mongoose.connect('mongodb+srv://kaue:<password>@cluster0.1msze.mongodb.net/<nameBD>',{
+mongoose.connect('mongodb+srv://<name>:<password>@cluster0.1msze.mongodb.net/<nameBD>',{
     useNewUrlParser:true,
     useUnifiedTopology:true
 }).then(()=>{
