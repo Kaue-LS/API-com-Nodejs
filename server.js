@@ -29,7 +29,7 @@ app.use(Routes)
 // Para conectar é necessário ter uma conta no MONGOATLAS
 // cria a primeira database gratuita
 // clica no botão connect no banco de dados criado
-mongoose.connect('mongodb://localhost:27017/clientes',{
+mongoose.connect('URl do BD MongoAtlas',{
     useNewUrlParser:true,
     useUnifiedTopology:true
 }).then(()=>{
