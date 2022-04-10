@@ -71,6 +71,9 @@ export const Buttons=styled.div`
         }
 
     }
+    @media (max-width:880px) {
+        display: none;
+    }
 `
 
 export const Cliente=styled.div`

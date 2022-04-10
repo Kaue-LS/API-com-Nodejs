@@ -1,7 +1,9 @@
 import { getToken } from "./Auth";
-import { Outlet,Navigate } from "react-router-dom";
+import {Navigate } from "react-router-dom";
 
-export default function PrivateRoute() {
+export default function PrivateRoute({children}) {
   const auth = getToken();
-  return auth ? <Outlet></Outlet> : <Navigate to="/login"></Navigate>;
+  console.log(auth)
+
+  return auth ?children: <Navigate to="/login"></Navigate>;
 }

@@ -27,7 +27,7 @@ export default function Cliente() {
            <h2>Dados do Cliente:</h2>
           <div className='labelControl'>
         <label>Nome Completo:</label>
-       <p>{dados.nome}</p>
+       <p>{dados.nome} {dados.sobrenome}</p>
         </div>
         <div className='labelControl'>
         <label>Email:</label>
@@ -36,7 +36,7 @@ export default function Cliente() {
         <div className='labelControl'>
         <label>Tipo:</label>
        {
-          dados.admin?(
+          dados.admin==="Admin"?(
             <p>Administrador</p>
             ):(
               <p>Cliente</p>
@@ -47,12 +47,14 @@ export default function Cliente() {
       
           </>
         ):(
-          'carregando'
+          <div>
+            <h1>Carregando cliente ...</h1>
+          </div>
         )}
       
           <S.Label>
             <h2>Ja me cadastrei, e agora?</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad asperiores eaque harum cumque aliquam. Commodi laboriosam adipisci ex architecto autem, fuga neque, nesciunt eius quam error hic dolor repellendus quisquam.</p>
+            <p>Agora que já se cadastrou, pode voltar a tela incial, e pronto, você terminou o cadastro, você pode se cadastrar novamente caso queira, mas claro, com outra conta.</p>
           </S.Label>
           </S.Info>
       </S.Cliente>

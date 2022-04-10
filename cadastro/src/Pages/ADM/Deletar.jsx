@@ -8,7 +8,7 @@ export default function Deletar(){
     const DeletarCliente=async()=>{
         const response= await Delete.delete(`/api/clientes/${state._id}`)
         if(response.status===200){
-            window.location.href='/admin'
+            window.location.href='/admin/clientes'
           }else{
             alert("Erro ao excluir cliente")
           }

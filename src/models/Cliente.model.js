@@ -14,8 +14,8 @@ const DataSchema= new mongoose.Schema({
         type: String,
      },
     admin:{
-        type:Boolean,
-        default:false
+        type:String,
+        default:'USER'
     },
     email:{
        type: String,
@@ -29,6 +29,8 @@ const DataSchema= new mongoose.Schema({
         // Ele vai criar o create at e update at
     }
 )
+
+
 // Antes de salvar ele vai executar a seguinte função
 DataSchema.pre("save",function(next){
     if(!this.isModified("senha")){
@@ -39,6 +41,9 @@ DataSchema.pre("save",function(next){
     next()
     
 });
+
+// Encontrar usuario pela senha e realizar o update
+
 DataSchema.pre('findOneAndUpdate', function (next){
     var password = this.getUpdate().senha_usuario+'';
     if(password.length<55){
@@ -46,6 +51,9 @@ DataSchema.pre('findOneAndUpdate', function (next){
     }
     next();
 });
+
+
+// Verificar se a senha esta correta
 DataSchema.methods.isCorrecPassword= function(password,callback){
     const pass=this.senha
     bcrypt.compare(password,pass,function(err,same){
@@ -58,5 +66,7 @@ DataSchema.methods.isCorrecPassword= function(password,callback){
     })
 }
 
+
+// Exportando o Schema do banco de dados
 const clientes= mongoose.model("Clientes",DataSchema);
 module.exports=clientes;

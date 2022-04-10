@@ -26,8 +26,10 @@ app.use(Routes)
 
 
 // Conectando ao banco de dados mongoDB
-
-mongoose.connect('mongodb+srv://<name>:<password>@cluster0.1msze.mongodb.net/<nameBD>',{
+// Para conectar é necessário ter uma conta no MONGOATLAS
+// cria a primeira database gratuita
+// clica no botão connect no banco de dados criado
+mongoose.connect('mongodb://localhost:27017/clientes',{
     useNewUrlParser:true,
     useUnifiedTopology:true
 }).then(()=>{
@@ -43,7 +45,7 @@ mongoose.connect('mongodb+srv://<name>:<password>@cluster0.1msze.mongodb.net/<na
 
 
 
-
+// Iniciando servidor
 app.listen(port,()=>{
     console.log(`Server iniciado na porta : http://localhost:${port} `)
 })

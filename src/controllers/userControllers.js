@@ -76,6 +76,8 @@ module.exports={
             }else if(!user){
                 res.status(200).json({status:2,error:"Email não encontrado"})
             }
+
+            // Certificando senha
             else{
                 user.isCorrecPassword(senha,function(err,same){
                     if(err){
@@ -95,6 +97,8 @@ module.exports={
     }
 })
 },
+
+// Verificar Token
     async checkToken(req,res){
         const token = req.body.token || req.query.token || req.cookies.token || req.header("x-access-token");
         req.token=token;
@@ -116,6 +120,9 @@ module.exports={
             })
         }
     },
+
+
+    // Destroindo Token
     async destroyToken(req,res){
         const token = req.headers.token;
         if(token){

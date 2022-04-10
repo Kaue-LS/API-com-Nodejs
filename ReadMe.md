@@ -1,12 +1,13 @@
 # Como iniciar:
 - Necessário ter o comando npm, e ter o node.js instalado.
+- Ter conta no mongoAtlas para conectar ao banco de dados.
 ## Há duas opções:
  
 - Iniciar ambos Back-end, Front-end na própria pasta de Back-end.
 -- No terminal basta digitar : **npm run cadastro**
 
 - Iniciar em cada pasta.
--- Abrindo a pasta Back-end e digitando no terminal: **node server.js**; e na pasta cadastro digite **npm start**
+-- Digitando no terminal: **node server.js**; e na pasta cadastro digite **npm start**
 
 ## Pastas e suas funções:
 
@@ -16,6 +17,11 @@
 - Criar os Schemas do Banco.
 - Cria rotas para executar  CRUD da API.
 - Leia o arquivo readme na pasta **Back-End**
+- Enviar e Destroir Token
+
+
+
+
 
 ### Front-End:
 - Integra com o Banco de dados

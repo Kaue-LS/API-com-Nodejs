@@ -31,23 +31,25 @@ export const Painel=styled.div`
 `
 
 export const Body=styled.div`
-    box-shadow: 0px 0px 30px black;    
+    box-shadow: 0px -10px 20px #00000090;    
     width: 100%;
+    height:100% ;
     padding: 15px 0;
     background-color: #f4f4f4;
     
-    div{
+    section{
         margin: 0px auto;
         width: 90%;
-        label{
-            margin: 10px 0;
+  
+    
+    }
+    label{
+        margin:23px 0 ;
         font-size: 1.5rem;
     }
     p{
         text-align:justify;
         width: 99%;
+        margin:10px 0px ;
     }
-    
-    }
-   
     `

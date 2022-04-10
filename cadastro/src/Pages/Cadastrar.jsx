@@ -36,7 +36,7 @@ export default function Cadastrar(){
                 nome,
                 sobrenome,
                 email,
-                admin:false,
+                admin:'User',
                 senha
             }
            const response= await Post.post('/api/clientes',data)
@@ -51,7 +51,7 @@ export default function Cadastrar(){
         <S.Cadastrar>
             <h1>Informe seus dados abaixo:</h1>
 
-            <S.Form>
+            <S.Form >
                 <h4>Cadastro</h4>
                 <span>{erro}</span>
                 <S.FormControl>

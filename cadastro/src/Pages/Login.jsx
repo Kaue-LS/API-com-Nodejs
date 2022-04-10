@@ -14,27 +14,31 @@ export default function LogIn(){
             senha
         }
         const res=await Post.post('/api/clientes/login',Data)
+        console.log(res)
             if(res.status===200){
-                if(res.data.status===1){
+              
+                if(res.data.status===2){
+                    alert(`Atenção: ${res.data.error}`)
+                }
+                else{
                     Logar(res.data.token)
                     SetIdClient(res.data.id)
                     SetNomeClient(res.data.nome)
                     setAdminCliente(res.data.admin)
-                    const tipo=JSON.parse(GetAdminClient())
-                    if(tipo===true){
-                        console.log(tipo)
-                        console.log('admin')
-                        window.location.href='/'
-                    }
-                    else if(tipo===false){
+
+                      const tipo=GetAdminClient()
+                   
+                     if(tipo==='User'){
                         console.log(tipo)
                         console.log('cliente')
             
                         window.location.href='/cliente'
                     }
-                }
-                else if(res.data.status===2){
-                    alert(`Atenção: ${res.data.error}`)
+                    else{
+                        console.log(tipo)
+                        console.log('admin')
+                        window.location.href='/'
+                    }
                 }
             }else{
                 alert('Erro no servidor')
@@ -45,9 +49,9 @@ export default function LogIn(){
     return(
         <S.Login>
          <h1>Login</h1>
-         <S.Form>
+         <S.Form on>
             <label>Email:</label>
-            <input value={email} placeholder='Seu email' onChange={e=>setEmail(e.target.value)} type={'text'}/>
+            <input value={email} placeholder='Seu email' onChange={e=>setEmail(e.target.value)} type={'email'}/>
             <label>Senha</label>
             <input type={'password'} placeholder='Sua senha' onChange={e=>setSenha(e.target.value)}/> 
             

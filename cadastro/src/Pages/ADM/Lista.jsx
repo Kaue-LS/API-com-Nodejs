@@ -31,7 +31,7 @@ export default function Cliente() {
                   <p>{item.nome} {item.sobrenome}</p>
                 </S.Name>
                 <div>
-                {item.admin===true?(
+                {item.admin==="Admin"?(
                   null
                 ):(
                   <S.Buttons>
@@ -49,7 +49,7 @@ export default function Cliente() {
                 )}
                 <S.Tipo>
                 {
-                  item.admin===false?(
+                  item.admin==="User"?(
                     <S.Tipo2>
                       <p>Cliente</p>
                     </S.Tipo2>
